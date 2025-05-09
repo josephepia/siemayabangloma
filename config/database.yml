@@ -83,8 +83,8 @@ production:
   primary: &primary_production
     <<: *default
     database: siemayabangloma_rails_production
-    username: <%= ENV["USERNAME_DATABASE"] %>
-    password: <%= ENV["SIEMAYABANGLOMA_RAILS_DATABASE_PASSWORD"] %>
+    # username: <%= ENV["USERNAME_DATABASE"] %>
+    # password: <%= ENV["SIEMAYABANGLOMA_RAILS_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: siemayabangloma_rails_production_cache
