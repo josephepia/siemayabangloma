@@ -1,0 +1,9 @@
+<% content_for :title, "New identification type" %>
+
+<div class="md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">New identification type</h1>
+
+  <%= render "form", identification_type: @identification_type %>
+
+  <%= link_to "Back to identification types", identification_types_path, class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+</div>

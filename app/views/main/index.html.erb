@@ -1,10 +1,55 @@
 
-
+<% expiration_time = 5.minutes.from_now %>
 <div class="rounded-4xl overflow-hidden shadow-xl">
   <div class="p-16">
     <div class="font-bold mb-2 text-6xl text-blue-950 pb-16">Sitio en construcción</div>
     <p class=" text-lg text-sky-400">
       Estamos trabajando para ofrecerte una mejor experiencia. <br>
       <span class="text-2xl text-blue-950">¡Pronto estaremos en línea!</span>
+
     </p>
+    <button class="btn btn-primary">Hello daisyUI!</button>
+    <span class="countdown">
+    <span style=<%= "--value:#{distance_of_time_in_words(Time.now, expiration_time)};"%> aria-live="polite" aria-label="59"></span>
+  </span>
+  <span class="countdown font-mono text-6xl">
+  <span style="--value:59;" aria-live="polite" aria-label="59"></span>
+</span>
+
+<span class="countdown font-mono text-2xl">
+<%= distance_of_time_in_words(Time.now, expiration_time) %>
+  <span style="--value:10;" aria-live="polite" aria-label="10"></span>
+  h
+  <span style="--value:24;" aria-live="polite" aria-label="24"></span>
+  m
+  <span style="--value:59;" aria-live="polite" aria-label="59"></span>
+  s
+</span>
   </div>
+
+  <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
+  <div class="flex flex-col">
+    <span class="countdown font-mono text-5xl">
+      <span style="--value:15;" aria-live="polite" aria-label="15"></span>
+    </span>
+    days
+  </div>
+  <div class="flex flex-col">
+    <span class="countdown font-mono text-5xl">
+      <span style="--value:10;" aria-live="polite" aria-label="10"></span>
+    </span>
+    hours
+  </div>
+  <div class="flex flex-col">
+    <span class="countdown font-mono text-5xl">
+      <span style="--value:24;" aria-live="polite" aria-label="24"></span>
+    </span>
+    min
+  </div>
+  <div class="flex flex-col">
+    <span class="countdown font-mono text-5xl">
+      <span style="--value:59;" aria-live="polite" aria-label="59"></span>
+    </span>
+    sec
+  </div>
+</div>

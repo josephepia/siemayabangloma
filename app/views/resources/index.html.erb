@@ -1,0 +1,61 @@
+<% content_for :title, "Resources" %>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Recursos</h1>
+    <%= link_to "Nuevo recurso", new_resource_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+  </div>
+
+ 
+
+<div class="overflow-x-auto pt-20">
+  <table class="table table-zebra">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Entidad</th>
+        <th>es visible ?</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @resources.each do |resource| %>
+
+        <tr>
+        <th><%= resource.id %></th>
+        <th><%= resource.name %></th>
+        <th><%= resource.entity_type %></th>
+        <th><%= resource.is_visible %></th>
+
+            <% if @resources.any? %>
+        <th>
+          <div class="join">
+
+          <%= link_to "Ver", resource, class: "btn join-item " %>
+          <%= link_to "Editar", edit_resource_path(resource), class: "btn join-item "%>
+          <div class="inline-block">
+            <%= button_to "Eliminar", resource, method: :delete, class: "btn join-item btn-error", data: { turbo_confirm: "Are you sure?" } %>
+          </div>
+          
+          </div>
+        
+        </th>
+        <% else %>
+              <p class="text-center my-10">No se encontraron registros</p>
+            <%end%>
+
+
+      </tr>
+      <% end %>
+    
+
+    </tbody>
+  </table>
+</div>

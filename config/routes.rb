@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :operations
+  resources :privileges
+  resources :authorizations
+  resources :role_permissions
+  resources :user_roles
+  resources :identifications
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+  resources :roles
+  resources :permissions
+  resources :identification_types
+  resources :resources
   get "main/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,4 +27,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "main#index";
+
 end
