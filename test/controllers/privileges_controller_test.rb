@@ -17,7 +17,7 @@ class PrivilegesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create privilege" do
     assert_difference("Privilege.count") do
-      post privileges_url, params: { privilege: { action_id: @privilege.action_id, permission_id: @privilege.permission_id, resource_id: @privilege.resource_id } }
+      post privileges_url, params: { privilege: { operation_id: @privilege.operation_id, permission_id: @privilege.permission_id, resource_id: @privilege.resource_id } }
     end
 
     assert_redirected_to privilege_url(Privilege.last)
@@ -34,7 +34,7 @@ class PrivilegesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update privilege" do
-    patch privilege_url(@privilege), params: { privilege: { action_id: @privilege.action_id, permission_id: @privilege.permission_id, resource_id: @privilege.resource_id } }
+    patch privilege_url(@privilege), params: { privilege: { operation_id: @privilege.operation_id, permission_id: @privilege.permission_id, resource_id: @privilege.resource_id } }
     assert_redirected_to privilege_url(@privilege)
   end
 

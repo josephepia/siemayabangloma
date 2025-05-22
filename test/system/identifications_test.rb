@@ -14,7 +14,7 @@ class IdentificationsTest < ApplicationSystemTestCase
     visit identifications_url
     click_on "New identification"
 
-    fill_in "Indentification type", with: @identification.indentification_type_id
+    fill_in "identification type", with: @identification.identification_type_id
     fill_in "Number", with: @identification.number
     fill_in "User", with: @identification.user_id
     click_on "Create Identification"
@@ -27,7 +27,7 @@ class IdentificationsTest < ApplicationSystemTestCase
     visit identification_url(@identification)
     click_on "Edit this identification", match: :first
 
-    fill_in "Indentification type", with: @identification.indentification_type_id
+    fill_in "identification type", with: @identification.identification_type_id
     fill_in "Number", with: @identification.number
     fill_in "User", with: @identification.user_id
     click_on "Update Identification"

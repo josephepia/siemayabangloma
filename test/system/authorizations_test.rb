@@ -14,7 +14,7 @@ class AuthorizationsTest < ApplicationSystemTestCase
     visit authorizations_url
     click_on "New authorization"
 
-    fill_in "Action", with: @authorization.action_id
+    fill_in "Action", with: @authorization.operation_id
     fill_in "Resource", with: @authorization.resource_id
     fill_in "User", with: @authorization.user_id
     click_on "Create Authorization"
@@ -27,7 +27,7 @@ class AuthorizationsTest < ApplicationSystemTestCase
     visit authorization_url(@authorization)
     click_on "Edit this authorization", match: :first
 
-    fill_in "Action", with: @authorization.action_id
+    fill_in "Action", with: @authorization.operation_id
     fill_in "Resource", with: @authorization.resource_id
     fill_in "User", with: @authorization.user_id
     click_on "Update Authorization"

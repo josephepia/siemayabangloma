@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "identifications/index", type: :view do
   before(:each) do
     assign(:identifications, [
-      Identification.create!(),
-      Identification.create!()
+      create(:identification),
+      create(:identification)
     ])
   end
 

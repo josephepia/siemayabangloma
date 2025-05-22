@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "identification_types/edit", type: :view do
   let(:identification_type) {
-    IdentificationType.create!()
+    create(:identification_type)
   }
 
   before(:each) do

@@ -65,6 +65,6 @@ class IdentificationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def identification_params
-      params.expect(identification: [ :user_id, :indentification_type_id, :number ])
+      params.expect(identification: [ :user_id, :identification_type_id, :number ])
     end
 end

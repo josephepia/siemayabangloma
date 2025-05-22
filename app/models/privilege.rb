@@ -23,6 +23,6 @@
 #
 class Privilege < ApplicationRecord
   belongs_to :permission
-  belongs_to :action
+  belongs_to :operation
   belongs_to :resource
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "authorizations/edit", type: :view do
   let(:authorization) {
-    Authorization.create!()
+    create(:authorization)
   }
 
   before(:each) do

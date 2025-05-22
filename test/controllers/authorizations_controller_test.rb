@@ -17,7 +17,7 @@ class AuthorizationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create authorization" do
     assert_difference("Authorization.count") do
-      post authorizations_url, params: { authorization: { action_id: @authorization.action_id, resource_id: @authorization.resource_id, user_id: @authorization.user_id } }
+      post authorizations_url, params: { authorization: { operation_id: @authorization.operation_id, resource_id: @authorization.resource_id, user_id: @authorization.user_id } }
     end
 
     assert_redirected_to authorization_url(Authorization.last)
@@ -34,7 +34,7 @@ class AuthorizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update authorization" do
-    patch authorization_url(@authorization), params: { authorization: { action_id: @authorization.action_id, resource_id: @authorization.resource_id, user_id: @authorization.user_id } }
+    patch authorization_url(@authorization), params: { authorization: { operation_id: @authorization.operation_id, resource_id: @authorization.resource_id, user_id: @authorization.user_id } }
     assert_redirected_to authorization_url(@authorization)
   end
 

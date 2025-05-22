@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "resources/edit", type: :view do
   let(:resource) {
-    Resource.create!()
+    create(:resource)
   }
 
   before(:each) do

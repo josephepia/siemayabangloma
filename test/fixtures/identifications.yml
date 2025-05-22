@@ -23,10 +23,10 @@
 #
 one:
   user: one
-  indentification_type: one
+  identification_type: one
   number: MyString
 
 two:
   user: two
-  indentification_type: two
+  identification_type: two
   number: MyString

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "privileges/show", type: :view do
   before(:each) do
-    assign(:privilege, Privilege.create!())
+    assign(:privilege, create(:privilege))
   end
 
   it "renders attributes in <p>" do

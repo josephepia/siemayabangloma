@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "privileges/edit", type: :view do
   let(:privilege) {
-    Privilege.create!()
+    create(:privilege)
   }
 
   before(:each) do

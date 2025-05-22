@@ -65,6 +65,6 @@ class PrivilegesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def privilege_params
-      params.expect(privilege: [ :permission_id, :action_id, :resource_id ])
+      params.expect(privilege: [ :permission_id, :operation_id, :resource_id ])
     end
 end

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "privileges/index", type: :view do
   before(:each) do
     assign(:privileges, [
-      Privilege.create!(),
-      Privilege.create!()
+      create(:privilege),
+      create(:privilege)
     ])
   end
 

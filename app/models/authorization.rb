@@ -23,6 +23,6 @@
 #
 class Authorization < ApplicationRecord
   belongs_to :user
-  belongs_to :action
+  belongs_to :operation
   belongs_to :resource
 end

@@ -14,7 +14,7 @@ class PrivilegesTest < ApplicationSystemTestCase
     visit privileges_url
     click_on "New privilege"
 
-    fill_in "Action", with: @privilege.action_id
+    fill_in "Action", with: @privilege.operation_id
     fill_in "Permission", with: @privilege.permission_id
     fill_in "Resource", with: @privilege.resource_id
     click_on "Create Privilege"
@@ -27,7 +27,7 @@ class PrivilegesTest < ApplicationSystemTestCase
     visit privilege_url(@privilege)
     click_on "Edit this privilege", match: :first
 
-    fill_in "Action", with: @privilege.action_id
+    fill_in "Action", with: @privilege.operation_id
     fill_in "Permission", with: @privilege.permission_id
     fill_in "Resource", with: @privilege.resource_id
     click_on "Update Privilege"

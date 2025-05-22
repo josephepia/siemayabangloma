@@ -17,7 +17,7 @@ class IdentificationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create identification" do
     assert_difference("Identification.count") do
-      post identifications_url, params: { identification: { indentification_type_id: @identification.indentification_type_id, number: @identification.number, user_id: @identification.user_id } }
+      post identifications_url, params: { identification: { identification_type_id: @identification.identification_type_id, number: @identification.number, user_id: @identification.user_id } }
     end
 
     assert_redirected_to identification_url(Identification.last)
@@ -34,7 +34,7 @@ class IdentificationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update identification" do
-    patch identification_url(@identification), params: { identification: { indentification_type_id: @identification.indentification_type_id, number: @identification.number, user_id: @identification.user_id } }
+    patch identification_url(@identification), params: { identification: { identification_type_id: @identification.identification_type_id, number: @identification.number, user_id: @identification.user_id } }
     assert_redirected_to identification_url(@identification)
   end
 

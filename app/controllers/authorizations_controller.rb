@@ -65,6 +65,6 @@ class AuthorizationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def authorization_params
-      params.expect(authorization: [ :user_id, :action_id, :resource_id ])
+      params.expect(authorization: [ :user_id, :operation_id, :resource_id ])
     end
 end

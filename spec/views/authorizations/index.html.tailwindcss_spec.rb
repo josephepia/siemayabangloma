@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "authorizations/index", type: :view do
   before(:each) do
     assign(:authorizations, [
-      Authorization.create!(),
-      Authorization.create!()
+      create(:authorization),
+      create(:authorization)
     ])
   end
 

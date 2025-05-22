@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "authorizations/show", type: :view do
   before(:each) do
-    assign(:authorization, Authorization.create!())
+    assign(:authorization, create(:authorization))
   end
 
   it "renders attributes in <p>" do

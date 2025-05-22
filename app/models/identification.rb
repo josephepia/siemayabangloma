@@ -21,5 +21,5 @@
 #
 class Identification < ApplicationRecord
   belongs_to :user
-  belongs_to :indentification_type
+  belongs_to :identification_type
 end
