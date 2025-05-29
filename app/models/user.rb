@@ -27,4 +27,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :user_roles, dependent: :destroy
+  has_many :roles, through: :user_roles
+  has_many :authorizations
+  has_many :resources, through: :authorizations
+  has_many :operations, through: :authorizations
+  has_many :identifications, inverse_of: :user, dependent: :destroy
+  accepts_nested_attributes_for :identifications, allow_destroy: true
+
+  # Validations
+  validates :email, uniqueness: { case_sensitive: false }
+  validates :first_name, presence: true
+  validates :paternal_name, presence: true
+  before_save { self.email = email.downcase }
+  validates :identifications, length: { minimum: 1, message: "must have at least one identification" }, allow_blank: true
 end

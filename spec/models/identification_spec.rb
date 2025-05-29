@@ -22,5 +22,14 @@
 require 'rails_helper'
 
 RSpec.describe Identification, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it { should validate_presence_of(:number) }
+    it { should validate_presence_of(:user_id) }
+    it { should validate_presence_of(:identification_type_id) }
+    it { should validate_numericality_of(:number).only_integer }
+  end
+  describe 'associations' do
+    it { should belong_to(:user) }
+    it { should belong_to(:identification_type) }
+  end
 end

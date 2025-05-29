@@ -25,5 +25,24 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build(:user) }
+  # let(:user){ build(:user) }
+  describe "validations ActiveModel" do
+    # it { should validate_presence_of(:email) }
+    # it { should validate_presence_of(:encrypted_password) }
+
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:paternal_name) }
+    # it { should validate_presence_of(:phone_number) }
+    it { should validate_uniqueness_of(:email).case_insensitive }
+  end
+
+  describe "associations" do
+    it { should have_many(:user_roles).dependent(:destroy) }
+    it { should have_many(:roles).through(:user_roles) }
+    it { should have_many(:authorizations) }
+    it { should have_many(:resources).through(:authorizations) }
+    it { should have_many(:operations).through(:authorizations) }
+    it { should have_many(:identifications) }
+  end
 end

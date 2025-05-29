@@ -22,4 +22,9 @@
 class Identification < ApplicationRecord
   belongs_to :user
   belongs_to :identification_type
+
+  # Validations
+  validates :number, presence: true, numericality: { only_integer: true }
+  validates :user_id, presence: true
+  validates :identification_type_id, presence: true, uniqueness: { scope: :user_id }
 end
