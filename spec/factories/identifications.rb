@@ -21,6 +21,7 @@
 #
 FactoryBot.define do
   factory :identification do
+    sequence(:number) { |n| n }
     user
     identification_type
   end

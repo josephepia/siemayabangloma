@@ -16,5 +16,6 @@
 FactoryBot.define do
   factory :identification_type do
     sequence(:name) { |n| "identification_type #{n}" }
+    sequence(:abbreviation) { |n| "abbreviation#{n}" }
   end
 end
